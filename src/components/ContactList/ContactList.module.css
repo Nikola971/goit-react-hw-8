@@ -1,0 +1,42 @@
+.itemCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 16px;
+  min-width: 300px;
+  margin-bottom: 40px;
+  color: black;
+}
+
+.listCard {
+  display: flex;
+  width: 300px;
+  gap: 4px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 10px 20px, rgba(255, 255, 255, 0.22) 0px 10px 20px;
+  background-color: var(--primary-bg-light-color);
+  color: black;
+}
+
+@media only screen and (min-width: 768px) {
+  .listCard {
+    width: 250px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .itemCard {
+    justify-content: space-around;
+    align-content: center;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .listCard {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+}

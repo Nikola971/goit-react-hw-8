@@ -1,0 +1,41 @@
+  .modalBox {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modalTitle {
+    color: var(--primary-purple-color);
+  }
+  .btnBox {
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--primary-bg-light-color);
+  }
+
+  .btn {
+    width: 110px;
+    height: 80px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background-color: var(--primary-purple-color);
+    color: var(--primary-white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    border-radius: 3px;
+    box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+    transition: background-color 250ms cubic-bezier(0.3, 0.1, 0.2, 0.3);
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: inset -5px -5px 10px 0px rgba(255, 255, 255, 0.5), inset 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+    transition: background-color 300ms cubic-bezier(0.3, 0.1, 0.2, 0.3);
+    color: rgb(25, 241, 25);
+}
+

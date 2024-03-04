@@ -1,0 +1,87 @@
+.form {
+  display: flex;
+  flex-direction: column;
+    width: 320px;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    background-color: var(--primary-bg-light-color);
+    box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5), 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    color: var(--primary-text-color);
+  }
+  
+  .input {
+    height: 50px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 3px;
+    border-bottom: 1px solid var(--primary-bg-light-color);
+    box-shadow: rgb(221, 204, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  }
+
+  .inputPass {
+    height: 50px;
+    padding-left: 15px;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    border-bottom: 1px solid var(--primary-bg-light-color);
+    box-shadow: rgb(221, 204, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  }
+
+  input:focus {
+    background-color: var(--primary-input-focus-color);
+  }
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+  }
+
+  .passView {
+    display: flex;
+  }
+
+  .iconEye {
+    display: flex;
+    width: 50px;
+    background-color: var(--primary-input-focus-color);
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .error {
+    font-size: 10px;
+    color: red;
+}
+
+  .btn {
+    width: 160px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background-color: var(--primary-purple-color);
+    color: var(--primary-white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    border-radius: 3px;
+    box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+    transition: background-color 250ms cubic-bezier(0.3, 0.1, 0.2, 0.3);
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: inset -5px -5px 10px 0px rgba(255, 255, 255, 0.5), inset 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+    background-color: var(--primary-purple-hover-color);
+}
+
+@media (prefers-color-scheme: light) {
+  .form {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      background-color: rgba(250, 223, 253, 0.1);
+    }
+}

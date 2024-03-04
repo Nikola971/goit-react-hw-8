@@ -1,0 +1,77 @@
+:root {
+  --primary-font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --primary-black-color: #1b1b1b;
+  --primary-grey-color: #5e5e61;
+  --primary-white-color: #fff;
+  --primary-blue-color: #404bbf;
+  --primary-light-grey-color: #ebebf1;
+  --primary-prelight-grey-color: #c1c1c2;
+  --primary-purple-color: #430477;
+  --primary-purple-hover-color: #722caa;
+  --primary-bg-color: #463449;
+  --primary-bg-light-color: #fdf1ff;
+  --primary-text-color: #2d064d;
+  --primary-input-focus-color: #e1c1ff;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-black-color);
+}
+a:hover {
+  color: var(--primary-blue-color);
+}
+
+body {
+  font-family: var(--primary-font);
+  color: var(--primary-light-grey-color);
+  background: orangered;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+td,
+th {
+  border: 2px solid #666;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: var(--primary-white-color);
+  }
+  body {
+    color: var(--primary-black-color);
+    background: var(--primary-white-color);
+  }
+  a:hover {
+    color: var(--primary-blue-color);
+  }
+}

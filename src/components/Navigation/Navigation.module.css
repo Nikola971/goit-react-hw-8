@@ -1,0 +1,18 @@
+.navLink {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  font-weight: 700;
+  color: orange;
+}
+
+.link {
+  display: inline-block;
+  padding: 6px;
+  font-weight: 700;
+  color: black;
+}
+
+.link.active {
+  color: orange;
+}

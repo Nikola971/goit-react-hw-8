@@ -1,0 +1,8 @@
+.modalBox {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  

@@ -1,0 +1,19 @@
+
+.containerMain {
+    min-width: 320px;
+    max-width: 428px;
+    margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+    .containerMain {
+        min-width: 768px;
+    }
+    
+}
+@media only screen and (min-width: 1440px) {
+    .containerMain {
+        min-width: 1240px;
+        padding: 0 15px;
+    }
+    
+}
