@@ -19,17 +19,10 @@ const RegisterForm = () => {
   const dispatch = useDispatch();
   const [password, setPassword] = useState('');
   const [type, setType] = useState('password');
-  const [icon, setIcon] = useState(eyeOff);
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    dispatch(
-      register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
+  const handleSubmit = (values, actions) => {
+   dispatch(
+      register(values)
     )
       .unwrap()
       .then(() => {
@@ -38,17 +31,13 @@ const RegisterForm = () => {
       .catch(() => {
         toast.error('Something is wrong!');
       });
-    form.reset();
-  };
+    actions.resetForm();
+}
+
+
 
   const handleToggle = () => {
-    if (type === 'password') {
-      setIcon(eye);
-      setType('text');
-    } else {
-      setIcon(eyeOff);
-      setType('password');
-    }
+  setType(type === "password" ? "text" : "password")
   };
 
   return (
@@ -59,8 +48,9 @@ const RegisterForm = () => {
         password: '',
       }}
       validationSchema={registerSchema}
+      onSubmit={handleSubmit}
     >
-      <Form className={css.form} onSubmit={handleSubmit} autoComplete="off">
+      <Form className={css.form} autoComplete="off">
         <label className={css.label}>
           <Field type="text" name="name" className={css.input} placeholder="Username" />
           <ErrorMessage className={css.error} name="name" component="span" />
@@ -81,7 +71,7 @@ const RegisterForm = () => {
               placeholder="Password"
             />
             <span className={css.iconEye} onClick={handleToggle}>
-              <Icon icon={icon} size={20} />
+              <Icon icon={type === "password" ? eye : eyeOff} size={20} />
             </span>
           </div>
           <ErrorMessage className={css.error} name="password" component="span" />
