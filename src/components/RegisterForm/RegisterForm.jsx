@@ -17,7 +17,6 @@ const registerSchema = Yup.object().shape({
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-  const [password, setPassword] = useState('');
   const [type, setType] = useState('password');
   const [icon, setIcon] = useState(eyeOff);
 
@@ -74,8 +73,6 @@ const RegisterForm = () => {
             <input
               type={type}
               name="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
               autoComplete="current-password"
               className={css.inputPass}
               placeholder="Password"
