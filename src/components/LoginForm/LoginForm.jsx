@@ -17,16 +17,10 @@ const registerSchema = Yup.object().shape({
 const LoginForm = () => {
   const dispatch = useDispatch();
   const [type, setType] = useState('password');
-  const [icon, setIcon] = useState(eyeOff);
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    dispatch(
-      logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
+  const handleSubmit = (values, actions) => {
+     dispatch(
+      logIn(values)
     )
       .unwrap()
       .then(() => {
@@ -35,17 +29,12 @@ const LoginForm = () => {
       .catch(() => {
         toast.error('User not found!');
       });
-    form.reset();
-  };
+    actions.resetForm();
+};
+
 
   const handleToggle = () => {
-    if (type === 'password') {
-      setIcon(eye);
-      setType('text');
-    } else {
-      setIcon(eyeOff);
-      setType('password');
-    }
+  setType(type === "password" ? "text" : "password")
   };
 
   return (
@@ -55,8 +44,9 @@ const LoginForm = () => {
         password: '',
       }}
       validationSchema={registerSchema}
+      onSubmit={handleSubmit}
     >
-      <Form className={css.form} onSubmit={handleSubmit} autoComplete="off">
+      <Form className={css.form} autoComplete="off">
         <label className={css.label}>
           <Field type="email" name="email" className={css.input} placeholder="Email" />
           <ErrorMessage className={css.error} name="email" component="span" />
@@ -70,8 +60,8 @@ const LoginForm = () => {
               className={css.inputPass}
               placeholder="Password"
             />
-            <span className={css.iconEye} onClick={handleToggle}>
-              <Icon icon={icon} size={20} />
+            <span className={css.iconEye} onClick={(handleToggle)}>
+              <Icon icon={type === "password" ? eye : eyeOff} size={20} />
             </span>
           </div>
           <ErrorMessage className={css.error} name="password" component="span" />

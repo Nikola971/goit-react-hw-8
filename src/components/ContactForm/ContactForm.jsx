@@ -2,7 +2,6 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import css from './ContactForm.module.css';
 import { useId } from 'react';
-import { nanoid } from 'nanoid';
 import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
@@ -25,8 +24,7 @@ const ContactForm = () => {
       }}
       validationSchema={contactSchema}
       onSubmit={(values, actions) => {
-        console.log(values);
-        dispatch(addContact({ id: nanoid(), ...values }));
+        dispatch(addContact(values));
         actions.resetForm();
       }}
     >
