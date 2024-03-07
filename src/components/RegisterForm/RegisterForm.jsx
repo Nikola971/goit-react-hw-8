@@ -60,7 +60,7 @@ const RegisterForm = () => {
         </label>
         <label className={css.label}>
           <div className={css.passView}>
-            <input
+            <Field
               type={type}
               name="password"
               autoComplete="current-password"

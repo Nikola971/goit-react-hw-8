@@ -24,6 +24,9 @@ a {
 a:hover {
   color: var(--primary-blue-color);
 }
+a.active {
+  color: var(--primary-blue-color);
+}
 
 body {
   font-family: var(--primary-font);
