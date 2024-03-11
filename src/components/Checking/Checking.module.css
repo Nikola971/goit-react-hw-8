@@ -1,11 +1,11 @@
 .checkingBox {
-    display: flex;
-    flex-direction: column;
-    color: red;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  gap: 8px;
 }
 
 .iconChecking {
-    color: red;
+  color: white;
 }
